@@ -1,14 +1,11 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application
+name: MkDocs deploy
 
 on:
   push:
     branches: [ "master" ]
-
-permissions:
-  contents: read
 
 jobs:
   build:
@@ -24,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt; fi
+        pip install -r requirements.txt
     - name: MkDocs deploy
       run: |
         mkdocs gh-deploy
