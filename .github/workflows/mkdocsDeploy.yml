@@ -24,4 +24,4 @@ jobs:
         pip install -r requirements.txt
     - name: MkDocs deploy
       run: |
-        mkdocs gh-deploy
+        mkdocs gh-deploy --force --clean --verbose
