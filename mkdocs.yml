@@ -1,0 +1,103 @@
+site_name: D365F&O Development
+repo_url: https://github.com/downarowiczd/d365-fo-developer-wiki
+theme:
+  name: material
+  icon:
+    logo: material/home
+    tag:
+      d365fo: simple/dynamics365
+      warehouse: material/warehouse
+      xpp: material/language-csharp
+      commerce: material/shopping
+      unifiedexperience: material/language-csharp
+      dotNet: material/dot-net
+      powerplatform: simple/powerapps
+      powerautomate: simple/powerautomate
+      powerapps: simple/powerapps
+      devops: material/microsoft-azure-devops
+      repo: fontawesome/brands/git-alt  
+      snippet: material/file-code  
+  features:
+    - content.action.edit
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.select
+    - toc.follow
+    - toc.integrate
+  palette: 
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+plugins:
+  - search:
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
+#  - tags:
+#      tags_file: index.md
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+  - git-authors
+extra:
+  tags:
+    D365 F&O: d365fo
+    Warehouse:  warehouse
+    X++: xpp
+    Commerce: commerce
+    Unified Experience: unifiedexperience
+    .NET: dotNet
+    PowerPlatform: powerplatform
+    PowerAutomate: powerautomate
+    PowerApps: powerapps
+    DevOps: devops
+    Snippet: snippet
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - md_in_html
+  - admonition
+  - pymdownx.details  
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - toc:
+      toc_depth: 2
+  - pymdownx.tasklist:
+      custom_checkbox: true
